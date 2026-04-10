@@ -1,0 +1,410 @@
+/* =====================================================
+   ModuleFans — Dark Premium Theme
+   Inspired by premium platforms · For academic use
+   ===================================================== */
+
+.root {
+    -fx-background-color: #0d0118;
+    -fx-font-size: 13px;
+}
+
+.label {
+    -fx-text-fill: #e0e0e0;
+}
+
+/* ---- HEADER ---- */
+.header-bar {
+    -fx-background-color: #110022;
+    -fx-border-color: #ff6b35;
+    -fx-border-width: 0 0 2 0;
+}
+
+.app-title {
+    -fx-text-fill: #ff6b35;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.app-subtitle {
+    -fx-text-fill: #808090;
+    -fx-font-size: 11px;
+}
+
+/* ---- MODULE CARDS ---- */
+.module-card {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 25 20;
+    -fx-cursor: hand;
+}
+
+.module-card:hover {
+    -fx-border-color: #ff6b35;
+    -fx-background-color: #231444;
+}
+
+.card-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.card-subtitle {
+    -fx-text-fill: #9090a0;
+    -fx-font-size: 12px;
+}
+
+/* ---- BUTTONS ---- */
+.btn-primary {
+    -fx-background-color: #ff6b35;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 25;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #ff8c5a;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #dd4a15;
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ff6b35;
+    -fx-border-color: #ff6b35;
+    -fx-border-width: 1;
+    -fx-padding: 8 18;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: rgba(255,107,53,0.12);
+}
+
+.btn-secondary:selected {
+    -fx-background-color: #ff6b35;
+    -fx-text-fill: white;
+}
+
+.btn-back {
+    -fx-background-color: transparent;
+    -fx-text-fill: #9090a0;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 1;
+    -fx-padding: 6 15;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+
+.btn-back:hover {
+    -fx-text-fill: white;
+    -fx-border-color: #ff6b35;
+}
+
+/* ---- BADGES ---- */
+.badge-premium {
+    -fx-background-color: #ffd700;
+    -fx-text-fill: #000000;
+    -fx-padding: 3 8;
+    -fx-background-radius: 10;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.badge-hot {
+    -fx-background-color: #ff3333;
+    -fx-text-fill: white;
+    -fx-padding: 3 8;
+    -fx-background-radius: 10;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* ---- STATS CARDS ---- */
+.stats-card {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+}
+
+.stat-value {
+    -fx-text-fill: #ff6b35;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.stat-label {
+    -fx-text-fill: #808090;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+/* ---- TABLEVIEW ---- */
+.table-view {
+    -fx-background-color: #0d0118;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 1;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ff6b35;
+    -fx-font-weight: bold;
+    -fx-padding: 8 10;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #d0d0d8;
+    -fx-border-color: transparent;
+    -fx-padding: 7 10;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #0d0118;
+    -fx-border-color: transparent transparent #1a0b30 transparent;
+    -fx-border-width: 1;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #231444;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #160929;
+}
+
+/* Anomaly rows highlighted red */
+.anomaly-row {
+    -fx-background-color: rgba(255, 40, 40, 0.15) !important;
+}
+
+.anomaly-row .table-cell {
+    -fx-text-fill: #ff5555;
+    -fx-font-weight: bold;
+}
+
+/* ---- CHAT ---- */
+.bubble-user {
+    -fx-background-color: #ff6b35;
+    -fx-text-fill: white;
+    -fx-padding: 10 14;
+    -fx-background-radius: 16 16 4 16;
+    -fx-wrap-text: true;
+    -fx-font-size: 13px;
+}
+
+.bubble-bot {
+    -fx-background-color: #1a0b30;
+    -fx-text-fill: #e0e0e0;
+    -fx-padding: 10 14;
+    -fx-background-radius: 16 16 16 4;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 1;
+    -fx-border-radius: 16 16 16 4;
+    -fx-wrap-text: true;
+    -fx-font-size: 13px;
+}
+
+/* ---- TIC-TAC-TOE ---- */
+.ttt-cell {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-min-width: 105px;
+    -fx-min-height: 105px;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-text-fill: #e0e0e0;
+}
+
+.ttt-cell:hover {
+    -fx-background-color: #231444;
+    -fx-border-color: #ff6b35;
+}
+
+.ttt-cell-x {
+    -fx-text-fill: #ff6b35 !important;
+}
+
+.ttt-cell-o {
+    -fx-text-fill: #9b59b6 !important;
+}
+
+/* ---- MOVIE CARDS ---- */
+.movie-card {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #ffd700;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+.movie-title {
+    -fx-text-fill: #ffd700;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+}
+
+.movie-genre {
+    -fx-text-fill: #ff6b35;
+    -fx-font-size: 12px;
+}
+
+.movie-score {
+    -fx-text-fill: #4caf50;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* ---- INPUTS ---- */
+.text-field {
+    -fx-background-color: #1a0b30;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #3a1a5c;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 14;
+    -fx-prompt-text-fill: #505060;
+}
+
+.text-field:focused {
+    -fx-border-color: #ff6b35;
+    -fx-background-color: #1f1040;
+}
+
+/* ---- SCROLL PANE ---- */
+.scroll-pane {
+    -fx-background-color: #0d0118;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #0d0118;
+}
+
+.scroll-bar {
+    -fx-background-color: #110022;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #3a1a5c;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar > .thumb:hover {
+    -fx-background-color: #ff6b35;
+}
+
+/* ---- COMBOBOX ---- */
+.combo-box {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.combo-box > .list-cell {
+    -fx-text-fill: #e0e0e0;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup > .list-view {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #ff6b35;
+    -fx-border-width: 1;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-text-fill: #e0e0e0;
+    -fx-background-color: #1a0b30;
+    -fx-padding: 6 10;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover {
+    -fx-background-color: #231444;
+}
+
+/* ---- CHECKBOX ---- */
+.check-box > .box {
+    -fx-background-color: #1a0b30;
+    -fx-border-color: #3a1a5c;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+.check-box:selected > .box {
+    -fx-background-color: #ff6b35;
+    -fx-border-color: #ff6b35;
+}
+
+.check-box > .box > .mark {
+    -fx-background-color: white;
+}
+
+/* ---- TOGGLE BUTTON ---- */
+.toggle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a0a0a0;
+    -fx-border-color: #3a1a5c;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 8 14;
+}
+
+.toggle-button:hover {
+    -fx-border-color: #ff6b35;
+    -fx-text-fill: #e0e0e0;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #ff6b35;
+    -fx-text-fill: white;
+    -fx-border-color: #ff6b35;
+    -fx-font-weight: bold;
+}
+
+/* ---- SLIDER ---- */
+.slider > .track {
+    -fx-background-color: #3a1a5c;
+    -fx-background-radius: 5;
+}
+
+.slider > .thumb {
+    -fx-background-color: #ff6b35;
+    -fx-background-radius: 50%;
+}
+
+.slider > .thumb:hover {
+    -fx-background-color: #ff8c5a;
+}
+
+/* ---- SEPARATOR ---- */
+.separator > .line {
+    -fx-border-color: #3a1a5c;
+}

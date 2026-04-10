@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.modulefans.controllers.MeteoController"
+            prefWidth="950" prefHeight="680">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+            <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
+            <VBox>
+                <Label text="🌡️ Météo Torride" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="Découvre les journées les plus HOT de France" styleClass="app-subtitle"/>
+            </VBox>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <Label text="🔴 Anomalie = temp brûlante détectée" style="-fx-text-fill: #ff4444; -fx-font-size: 11px;"/>
+            <Button text="📂 Charger CSV" styleClass="btn-secondary" onAction="#loadFromFile"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="15">
+            <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+            <!-- TABLE -->
+            <TableView fx:id="tableView" HBox.hgrow="ALWAYS" style="-fx-min-width: 550px;">
+                <columns>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="colVille" text="Ville" prefWidth="110"/>
+                    <TableColumn fx:id="colRegion" text="Région" prefWidth="110"/>
+                    <TableColumn fx:id="colTempMax" text="T.Max (°C)" prefWidth="90"/>
+                    <TableColumn fx:id="colTempMin" text="T.Min (°C)" prefWidth="90"/>
+                    <TableColumn fx:id="colPrecip" text="Précip." prefWidth="80"/>
+                    <TableColumn fx:id="colHumidite" text="Humidité" prefWidth="80"/>
+                </columns>
+                <placeholder><Label text="Aucune donnée chargée" style="-fx-text-fill: #606060;"/></placeholder>
+            </TableView>
+
+            <!-- STATS PANEL -->
+            <VBox spacing="12" style="-fx-min-width: 240px; -fx-max-width: 280px;">
+
+                <Label text="📊 STATISTIQUES PREMIUM" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+
+                <VBox styleClass="stats-card" spacing="4">
+                    <Label text="TEMPÉRATURE MOYENNE" styleClass="stat-label"/>
+                    <Label fx:id="lblMoyenne" text="—" styleClass="stat-value"/>
+                </VBox>
+                <VBox styleClass="stats-card" spacing="4">
+                    <Label text="MINIMUM" styleClass="stat-label"/>
+                    <Label fx:id="lblMin" text="—" styleClass="stat-value" style="-fx-text-fill: #4fc3f7;"/>
+                </VBox>
+                <VBox styleClass="stats-card" spacing="4">
+                    <Label text="MAXIMUM 🔥" styleClass="stat-label"/>
+                    <Label fx:id="lblMax" text="—" styleClass="stat-value"/>
+                </VBox>
+                <VBox styleClass="stats-card" spacing="4">
+                    <Label text="ÉCART-TYPE" styleClass="stat-label"/>
+                    <Label fx:id="lblEcartType" text="—" styleClass="stat-value" style="-fx-font-size: 18px;"/>
+                </VBox>
+                <VBox styleClass="stats-card" spacing="4" style="-fx-border-color: #ff4444;">
+                    <Label text="🚨 ANOMALIES DÉTECTÉES" styleClass="stat-label" style="-fx-text-fill: #ff4444;"/>
+                    <Label fx:id="lblAnomalies" text="—" styleClass="stat-value" style="-fx-text-fill: #ff4444;"/>
+                </VBox>
+                <VBox styleClass="stats-card" spacing="4" style="-fx-border-color: #ffd700;">
+                    <Label text="☀️ JOURNÉE LA PLUS TORRIDE" styleClass="stat-label" style="-fx-text-fill: #ffd700;"/>
+                    <Label fx:id="lblHottestDay" text="—" style="-fx-text-fill: #ffd700; -fx-font-size: 12px; -fx-wrap-text: true;"/>
+                </VBox>
+
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox styleClass="header-bar" style="-fx-border-width: 2 0 0 0;" alignment="CENTER_LEFT" spacing="10">
+            <padding><Insets top="10" bottom="10" left="20"/></padding>
+            <Label text="ℹ️" style="-fx-font-size: 13px;"/>
+            <Label fx:id="lblStatus" text="Données par défaut chargées" style="-fx-text-fill: #a0a0a0; -fx-font-size: 12px;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

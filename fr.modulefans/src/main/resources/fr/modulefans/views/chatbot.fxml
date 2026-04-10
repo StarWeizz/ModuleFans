@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.modulefans.controllers.ChatbotController"
+            prefWidth="950" prefHeight="680">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+            <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
+            <VBox>
+                <Label text="💬 Support Premium — ARIA™" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="Notre service client vous écoute presque · Disponible entre 2 abonnements"
+                       styleClass="app-subtitle"/>
+            </VBox>
+            <HBox HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT">
+                <Label text="🟢 En ligne" style="-fx-text-fill: #4caf50; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+                <Label text="ARIA · Assistant VIP" style="-fx-text-fill: #a0a0a0; -fx-font-size: 10px;"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
+            <VBox fx:id="messagesContainer" spacing="8" fillWidth="true"
+                  style="-fx-background-color: #0d0118; -fx-padding: 15;">
+                <padding><Insets top="10" bottom="10" left="10" right="10"/></padding>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox styleClass="header-bar" style="-fx-border-width: 2 0 0 0;">
+            <padding><Insets top="12" bottom="12" left="20" right="20"/></padding>
+            <HBox spacing="10" alignment="CENTER">
+                <TextField fx:id="inputField" HBox.hgrow="ALWAYS"
+                           promptText="Posez votre question premium ici..."
+                           style="-fx-min-height: 40px;"/>
+                <Button text="Envoyer 🚀" styleClass="btn-primary" onAction="#sendMessage"
+                        style="-fx-min-height: 40px; -fx-min-width: 120px;"/>
+            </HBox>
+            <Label text="💡 Essayez : abonnement · remboursement · météo · bug · films · morpion"
+                   style="-fx-text-fill: #505060; -fx-font-size: 10px; -fx-padding: 6 0 0 0;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,219 @@
+Tu es un expert senior en Java, JavaFX, SQLite, architecture MVC, design d’application desktop et UX satirique.
+Je veux que tu m’aides à concevoir et coder un projet scolaire Java nommé "ModuleFans", une application parodique inspirée visuellement et dans son ton de communication de la plateforme OnlyFans, mais adaptée à un projet académique Data & IA Toolbox.
+
+IMPORTANT :
+- Le projet doit rester sérieux techniquement et totalement fonctionnel.
+- Le ton marketing/UI peut être drôle, provocateur et parodique, mais jamais illégal, pornographique explicite ou hors cadre scolaire.
+- L’objectif est de créer une vraie application JavaFX desktop, propre, modulaire, démontrable en cours.
+- L’application doit respecter un cahier des charges scolaire : une seule toolbox avec plusieurs modules accessibles via un menu principal, usage de données externes (CSV, texte, SQLite), logique d’analyse ou d’IA simple, interface JavaFX fluide, séparation claire Modèle / Vue / Contrôleur / Services.
+
+CONTEXTE DU PROJET :
+Je veux réaliser une application appelée "ModuleFans" :
+- concept = une parodie de site premium / plateforme d’abonnement
+- style = inspiré d’OnlyFans : sombre, moderne, premium, cartes de contenu, badges VIP, teasing de contenu, pages “exclusive access”, “premium region”, “hot picks”, etc.
+- objectif = rendre les 4 modules du projet fun, cohérents entre eux, et présentés comme des “créateurs de contenu” ou des “catégories exclusives”
+- ambiance = humour, faux marketing agressif, slogans absurdes, mais application réellement utile et fonctionnelle
+
+LES 4 MODULES CHOISIS :
+1. Visualisateur de données météo
+2. Chatbot de support client
+3. IA joueuse de Tic-Tac-Toe
+4. Système de recommandation de films
+
+BUT GLOBAL :
+Je veux une réponse ultra détaillée qui me propose une vraie vision produit + architecture technique + organisation du code + idées UI + logique métier + exemples de textes + structure de base de données + datasets + classes JavaFX.
+
+JE VEUX QUE TU CONSTRUISES LA RÉPONSE EN 12 PARTIES :
+
+PARTIE 1 — CONCEPT GLOBAL
+- Propose un concept fort pour "ModuleFans"
+- Explique comment relier les 4 modules dans un même univers parodique
+- Donne un pitch de présentation orale du projet en 30 secondes, 1 minute et 2 minutes
+- Trouve une baseline / slogan principal
+- Donne 10 slogans secondaires drôles pour les écrans, boutons, headers et cartes
+
+PARTIE 2 — DIRECTION ARTISTIQUE / UI
+- Décris précisément la direction artistique inspirée d’OnlyFans mais adaptée à une app JavaFX scolaire
+- Propose une palette de couleurs (hex)
+- Propose les polices ou équivalents JavaFX
+- Décris les composants visuels : sidebar, topbar, cartes modules, badges premium, tags, boutons CTA, tableaux, chat bubbles, popups, alertes, badges “HOT”, “VIP”, “UNLOCKED”, “TRENDING”
+- Donne des règles de design pour que l’appli soit cohérente sur tous les modules
+
+PARTIE 3 — ARBORESCENCE DE L’APPLICATION
+- Propose la structure complète des écrans
+- Exemple : Splash screen, Login fictif ou écran d’accueil, Dashboard principal, accès aux 4 modules, page paramètres, popup premium parodique, historique, etc.
+- Fais un schéma de navigation simple
+- Donne les noms exacts des pages/fxml/controllers
+
+PARTIE 4 — ARCHITECTURE JAVA
+- Propose une architecture MVC / MVVM simple adaptée à JavaFX
+- Donne une arborescence de packages propre
+- Exemple attendu :
+  app/
+  controllers/
+  models/
+  services/
+  dao/
+  utils/
+  database/
+  views/
+  assets/
+- Donne la liste des classes principales et leur rôle
+- Donne aussi les classes communes réutilisables (DatabaseManager, CsvReader, NavigationManager, ThemeManager, AlertUtil, etc.)
+
+PARTIE 5 — MODULE 1 : METEO PARODIQUE
+Je veux transformer le module météo en expérience premium absurde.
+Idée :
+- “Découvre les températures les plus hot de ton territoire”
+- “Passe premium Aquitaine pour débloquer toute ta région préférée”
+- “Top des journées les plus torrides”
+- “Alerte canicule = contenu brûlant”
+
+Pour ce module, donne :
+- le concept UX humoristique
+- les données d’entrée attendues (CSV météo)
+- les colonnes de données utiles
+- les calculs à implémenter : moyenne, min, max, écart-type
+- la logique d’anomalie demandée dans le sujet
+- comment afficher les anomalies en rouge dans un TableView JavaFX
+- des idées de stats bonus
+- des textes UI drôles
+- la liste des classes Java nécessaires
+- le pseudo-code ou vrai code Java pour la logique
+- les éléments JavaFX à utiliser
+
+PARTIE 6 — MODULE 2 : CHATBOT SUPPORT CLIENT
+Je veux un chatbot parodique type support client premium.
+Idée :
+- “Notre service client vous écoute presque”
+- “Pose ta question au support le plus disponible entre 2 abonnements”
+- réponses semi-corporate, semi-absurdes
+- si la question n’est pas comprise, elle est enregistrée pour “révision premium future”
+
+Pour ce module, donne :
+- le concept UX humoristique
+- le fonctionnement attendu avec base SQLite
+- structure de table FAQ / mots-clés / réponses / questions non reconnues
+- logique de matching par mots-clés
+- stratégie simple de scoring
+- exemple de 20 entrées de base de connaissances
+- exemples de réponses drôles mais utiles
+- interface type messenger JavaFX
+- classes Java nécessaires
+- pseudo-code ou code Java du moteur
+- bonus admin pour enrichir la base plus tard
+- bonus à voir si c'est pas mieux de mettre une clé api openai pour plus de rapidité et facilité. Propose le moi au moment voulu avant de commencer le module.
+
+PARTIE 7 — MODULE 3 : TIC-TAC-TOE PARODIQUE
+Je veux un morpion rebrandé façon duel premium.
+Idée :
+- “Affronte une créatrice de coups tactiques”
+- “Match privé contre l’IA”
+- “Abonnement mental requis”
+- niveau facile = random
+- niveau difficile = gagner si possible, sinon bloquer le joueur
+
+Pour ce module, donne :
+- le concept UX humoristique
+- la structure du plateau
+- les règles
+- les deux niveaux d’IA à coder
+- comment stocker l’historique des parties en SQLite
+- comment calculer les stats de victoire joueur vs IA
+- idées d’animations JavaFX
+- textes UI drôles
+- classes Java nécessaires
+- pseudo-code ou code Java clair pour l’algorithme
+
+PARTIE 8 — MODULE 4 : RECOMMANDATION DE FILMS
+Je veux un système de recommandation de films présenté comme si on débloquait des “contenus premium”.
+Idée :
+- “Tes films les plus compatibles”
+- “Top 3 des matchs cinéma de ta soirée”
+- “Cette œuvre te désire émotionnellement”
+- l’utilisateur remplit ses goûts et le système calcule un score
+
+Pour ce module, donne :
+- le concept UX humoristique
+- structure de la base films
+- colonnes utiles (titre, genres, année, note, durée, popularité éventuellement)
+- structure du questionnaire utilisateur
+- algorithme de matching simple mais intelligent
+- formule de score
+- top 3 recommandations
+- possibilité de filtrer certains genres
+- interface JavaFX recommandée
+- classes Java nécessaires
+- pseudo-code ou code Java pour le scoring
+
+PARTIE 9 — BASE DE DONNÉES ET DONNÉES EXTERNES
+- Propose un schéma SQLite global pour toute l’application
+- sépare ce qui va en CSV et ce qui va en base
+- donne le script SQL de création des tables
+- propose des datasets faciles à récupérer / fabriquer pour la météo et les films
+- donne des exemples d’enregistrements
+- explique comment initialiser la base au lancement
+
+PARTIE 10 — PLAN DE DÉVELOPPEMENT
+- Découpe le projet en étapes réalistes
+- ordre conseillé de développement
+- MVP d’abord puis améliorations
+- donne une répartition de travail si projet en groupe
+- donne les priorités si je manque de temps
+
+PARTIE 11 — DÉMO ORALE ET ARGUMENTAIRE
+- Explique comment présenter le projet au prof pour qu’il voie à la fois la qualité technique et l’originalité
+- donne un discours qui insiste sur :
+  - respect du cahier des charges
+  - vraie logique IA simple
+  - usage de JavaFX
+  - SQLite / CSV
+  - architecture propre
+  - univers parodique cohérent
+- donne aussi les pièges à éviter à l’oral
+
+PARTIE 12 — BONUS
+- propose 20 noms de boutons et labels drôles
+- propose 20 messages toast / popup drôles
+- propose 10 fausses offres premium parodiques adaptées aux modules
+- propose des idées d’export CSV/PDF
+- propose une roadmap V2
+
+CONTRAINTES TECHNIQUES :
+- Java 17 ou version LTS compatible
+- JavaFX
+- SQLite
+- architecture propre, maintenable
+- pas de code inutilement complexe
+- code pédagogique
+- interface réalisable dans un temps étudiant
+- solution concrète, pas juste des idées vagues
+
+STYLE DE TA RÉPONSE :
+- sois ultra structuré
+- donne des tableaux si utile
+- donne du vrai concret
+- propose des noms de classes, méthodes, colonnes, fichiers
+- inclue du pseudo-code et des extraits Java
+- pense “projet qui doit vraiment être codé”
+- garde un ton sérieux techniquement mais créatif dans l’univers produit
+
+POINT TRÈS IMPORTANT :
+Je veux que tu assumes complètement la DA parodique “OnlyFans-like”, MAIS que tu la reformules toujours de façon compatible avec une présentation scolaire :
+- premium
+- exclusif
+- hot
+- top creators
+- contenu débloqué
+- abonnement
+- accès VIP
+- trending
+- private session
+sans tomber dans l’explicite sexuel
+
+À la fin, ajoute :
+1. une proposition de nom de package Java
+2. une arborescence complète du projet
+3. un mini backlog Trello en user stories
+4. un exemple de README
+5. une checklist finale avant rendu

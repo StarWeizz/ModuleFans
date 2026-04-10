@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.modulefans.controllers.MovieController"
+            prefWidth="950" prefHeight="680">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+            <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
+            <VBox>
+                <Label text="🎬 Ciné Exclusif" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="Tes films les plus compatibles · Cette œuvre te désire émotionnellement"
+                       styleClass="app-subtitle"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="20">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+
+            <!-- LEFT: Questionnaire -->
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-min-width: 280px; -fx-max-width: 300px;">
+                <VBox spacing="15">
+                    <padding><Insets top="5" right="10"/></padding>
+
+                    <Label text="🎭 TES GENRES PRÉFÉRÉS"
+                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                    <VBox styleClass="stats-card" spacing="6">
+                        <CheckBox fx:id="cbAction" text="💥 Action" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbAdventure" text="🗺️ Adventure" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbComedy" text="😂 Comedy" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbDrama" text="🎭 Drama" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbSciFi" text="🚀 Sci-Fi" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbThriller" text="😰 Thriller" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbRomance" text="❤️ Romance" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbAnimation" text="✨ Animation" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbHorror" text="👻 Horror" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbBiography" text="📚 Biography" style="-fx-text-fill: #e0e0e0;"/>
+                    </VBox>
+
+                    <Label text="📅 PÉRIODE"
+                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                    <VBox styleClass="stats-card" spacing="8">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label text="De :" style="-fx-text-fill: #a0a0a0; -fx-min-width: 30px;"/>
+                            <ComboBox fx:id="cmbMinYear" style="-fx-min-width: 90px;"/>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label text="À :" style="-fx-text-fill: #a0a0a0; -fx-min-width: 30px;"/>
+                            <ComboBox fx:id="cmbMaxYear" style="-fx-min-width: 90px;"/>
+                        </HBox>
+                    </VBox>
+
+                    <Label text="⭐ NOTE MINIMALE"
+                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                    <VBox styleClass="stats-card" spacing="8">
+                        <Slider fx:id="sliderRating" min="1" max="10" value="7"/>
+                        <Label fx:id="lblRatingValue" text="7.0 / 10"
+                               style="-fx-text-fill: #ffd700; -fx-font-weight: bold; -fx-font-size: 16px;"
+                               alignment="CENTER"/>
+                    </VBox>
+
+                    <Button text="🔥 Trouver mes films" styleClass="btn-primary" onAction="#recommend"
+                            style="-fx-min-width: 220px; -fx-padding: 12 20; -fx-font-size: 14px;"/>
+
+                </VBox>
+            </ScrollPane>
+
+            <!-- RIGHT: Results -->
+            <VBox HBox.hgrow="ALWAYS" spacing="15">
+                <Label text="🏆 TOP RECOMMANDATIONS EXCLUSIVES"
+                       style="-fx-text-fill: #ffd700; -fx-font-weight: bold; -fx-font-size: 15px;"/>
+
+                <Label fx:id="lblNoResult" text="Aucune recommandation pour ce profil. Élargissez vos critères !"
+                       style="-fx-text-fill: #a0a0a0; -fx-font-size: 13px;" visible="false"/>
+
+                <VBox fx:id="resultsContainer" spacing="12">
+                    <Label text="← Remplissez le questionnaire et cliquez sur 'Trouver mes films'"
+                           style="-fx-text-fill: #505060; -fx-font-size: 13px; -fx-padding: 30 0;"/>
+                </VBox>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

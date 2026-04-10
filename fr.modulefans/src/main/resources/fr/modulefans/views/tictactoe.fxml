@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.modulefans.controllers.TicTacToeController"
+            prefWidth="950" prefHeight="680">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="15">
+            <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
+            <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
+            <VBox>
+                <Label text="⚔️ Duel Tactique Premium" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="Match privé contre l'IA · Abonnement mental requis" styleClass="app-subtitle"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="30" alignment="CENTER">
+            <padding><Insets top="20" bottom="20" left="30" right="30"/></padding>
+
+            <!-- LEFT: Settings + Stats -->
+            <VBox spacing="15" style="-fx-min-width: 220px; -fx-max-width: 240px;">
+
+                <Label text="⚙️ PARAMÈTRES" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold;"/>
+                <VBox styleClass="stats-card" spacing="10">
+                    <Label text="Niveau d'IA" style="-fx-text-fill: #a0a0a0; -fx-font-size: 11px;"/>
+                    <HBox spacing="8">
+                        <ToggleButton fx:id="btnEasy" text="😎 Facile" styleClass="btn-secondary"
+                                      style="-fx-min-width: 90px;"/>
+                        <ToggleButton fx:id="btnHard" text="😈 Difficile" styleClass="btn-secondary"
+                                      style="-fx-min-width: 90px; -fx-text-fill: #ff4444;"/>
+                    </HBox>
+                </VBox>
+
+                <Label text="📊 STATISTIQUES" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+                <VBox styleClass="stats-card" spacing="8">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="🏆 Victoires" style="-fx-text-fill: #4caf50; -fx-min-width: 100px;"/>
+                        <Label fx:id="lblWins" text="0" styleClass="stat-value" style="-fx-text-fill: #4caf50; -fx-font-size: 18px;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="💀 Défaites" style="-fx-text-fill: #ff4444; -fx-min-width: 100px;"/>
+                        <Label fx:id="lblLosses" text="0" styleClass="stat-value" style="-fx-text-fill: #ff4444; -fx-font-size: 18px;"/>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="🤝 Nuls" style="-fx-text-fill: #ffd700; -fx-min-width: 100px;"/>
+                        <Label fx:id="lblDraws" text="0" styleClass="stat-value" style="-fx-text-fill: #ffd700; -fx-font-size: 18px;"/>
+                    </HBox>
+                </VBox>
+
+                <Button text="🎯 Nouvelle partie" styleClass="btn-primary" onAction="#newGame"
+                        style="-fx-min-width: 180px; -fx-padding: 12 20;"/>
+
+            </VBox>
+
+            <!-- CENTER: Game Grid -->
+            <VBox alignment="CENTER" spacing="15">
+                <Label fx:id="lblStatus" text="À vous de jouer ! Montrez ce que vous valez. 🎯"
+                       style="-fx-text-fill: #e0e0e0; -fx-font-size: 14px; -fx-wrap-text: true;"
+                       textAlignment="CENTER" maxWidth="340"/>
+
+                <GridPane hgap="6" vgap="6" alignment="CENTER">
+                    <Button fx:id="cell0" styleClass="ttt-cell" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Button fx:id="cell1" styleClass="ttt-cell" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Button fx:id="cell2" styleClass="ttt-cell" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Button fx:id="cell3" styleClass="ttt-cell" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Button fx:id="cell4" styleClass="ttt-cell" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Button fx:id="cell5" styleClass="ttt-cell" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <Button fx:id="cell6" styleClass="ttt-cell" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <Button fx:id="cell7" styleClass="ttt-cell" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Button fx:id="cell8" styleClass="ttt-cell" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="20">
+                    <Label text="✕ = Vous" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold;"/>
+                    <Label text="○ = IA" style="-fx-text-fill: #9b59b6; -fx-font-weight: bold;"/>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

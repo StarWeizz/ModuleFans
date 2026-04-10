@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.modulefans.controllers.MainMenuController"
+            prefWidth="950" prefHeight="680">
+
+    <!-- TOP HEADER -->
+    <top>
+        <VBox styleClass="header-bar" alignment="CENTER">
+            <padding><Insets top="20" bottom="20" left="30" right="30"/></padding>
+            <Label text="💎 ModuleFans" styleClass="app-title" style="-fx-font-size: 32px;"/>
+            <Label text="Your Premium Data Experience — Unlock What Matters" styleClass="app-subtitle"/>
+            <Label text="✦ 4 Créateurs Exclusifs · Données Brûlantes · Accès VIP ✦"
+                   style="-fx-text-fill: #ff6b35; -fx-font-size: 11px; -fx-padding: 4 0 0 0;"/>
+        </VBox>
+    </top>
+
+    <!-- CENTER: 2x2 Module Cards -->
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <padding><Insets top="30" bottom="30" left="50" right="50"/></padding>
+
+            <Label text="Choisissez votre contenu exclusif du moment"
+                   style="-fx-text-fill: #a0a0a0; -fx-font-size: 13px; -fx-padding: 0 0 20 0;"/>
+
+            <GridPane hgap="20" vgap="20" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="200" prefWidth="380"/>
+                    <ColumnConstraints minWidth="200" prefWidth="380"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="180"/>
+                    <RowConstraints minHeight="180"/>
+                </rowConstraints>
+
+                <!-- Card 1: Météo -->
+                <VBox styleClass="module-card" spacing="10" alignment="CENTER"
+                      GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="🌡️" style="-fx-font-size: 40px;"/>
+                    <HBox alignment="CENTER" spacing="8">
+                        <Label text="MÉTÉO TORRIDE" styleClass="card-title"/>
+                        <Label text="HOT" styleClass="badge-hot"/>
+                    </HBox>
+                    <Label text="Découvre les températures les plus brûlantes de ton territoire"
+                           styleClass="card-subtitle" alignment="CENTER" wrapText="true" textAlignment="CENTER"/>
+                    <Button text="🔥 Accéder" styleClass="btn-primary" onAction="#openMeteo"
+                            style="-fx-min-width: 140px;"/>
+                </VBox>
+
+                <!-- Card 2: Chatbot -->
+                <VBox styleClass="module-card" spacing="10" alignment="CENTER"
+                      GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="💬" style="-fx-font-size: 40px;"/>
+                    <HBox alignment="CENTER" spacing="8">
+                        <Label text="SUPPORT PREMIUM" styleClass="card-title"/>
+                        <Label text="VIP" styleClass="badge-premium"/>
+                    </HBox>
+                    <Label text="ARIA vous écoute presque — Support disponible entre 2 abonnements"
+                           styleClass="card-subtitle" alignment="CENTER" wrapText="true" textAlignment="CENTER"/>
+                    <Button text="💎 Accéder" styleClass="btn-primary" onAction="#openChatbot"
+                            style="-fx-min-width: 140px;"/>
+                </VBox>
+
+                <!-- Card 3: Tic-Tac-Toe -->
+                <VBox styleClass="module-card" spacing="10" alignment="CENTER"
+                      GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="🎮" style="-fx-font-size: 40px;"/>
+                    <HBox alignment="CENTER" spacing="8">
+                        <Label text="DUEL TACTIQUE" styleClass="card-title"/>
+                        <Label text="TRENDING" styleClass="badge-hot" style="-fx-background-color: #9b59b6;"/>
+                    </HBox>
+                    <Label text="Match privé contre l'IA — Abonnement mental requis"
+                           styleClass="card-subtitle" alignment="CENTER" wrapText="true" textAlignment="CENTER"/>
+                    <Button text="⚔️ Accéder" styleClass="btn-primary" onAction="#openTicTacToe"
+                            style="-fx-min-width: 140px;"/>
+                </VBox>
+
+                <!-- Card 4: Films -->
+                <VBox styleClass="module-card" spacing="10" alignment="CENTER"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="🎬" style="-fx-font-size: 40px;"/>
+                    <HBox alignment="CENTER" spacing="8">
+                        <Label text="CINÉ EXCLUSIF" styleClass="card-title"/>
+                        <Label text="UNLOCKED" styleClass="badge-premium" style="-fx-background-color: #4caf50;"/>
+                    </HBox>
+                    <Label text="Tes films les plus compatibles — Cette œuvre te désire émotionnellement"
+                           styleClass="card-subtitle" alignment="CENTER" wrapText="true" textAlignment="CENTER"/>
+                    <Button text="🍿 Accéder" styleClass="btn-primary" onAction="#openMovies"
+                            style="-fx-min-width: 140px;"/>
+                </VBox>
+
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM -->
+    <bottom>
+        <HBox alignment="CENTER" styleClass="header-bar" style="-fx-border-width: 2 0 0 0;">
+            <padding><Insets top="12" bottom="12"/></padding>
+            <Label text="© 2024 ModuleFans Inc. · Données locales · 100% Parodique · 0% Pornographique · Architecture MVC"
+                   style="-fx-text-fill: #505060; -fx-font-size: 10px;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
