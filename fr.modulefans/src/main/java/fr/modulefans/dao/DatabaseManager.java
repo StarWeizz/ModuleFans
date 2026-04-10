@@ -159,7 +159,7 @@ public class DatabaseManager {
             {"météo,temperature,climat,temps", "Notre module Météo analyse les températures les plus torrides de France. Accédez-y depuis le menu principal pour débloquer des statistiques brûlantes.", "modules"},
             {"film,cinéma,recommandation,voir", "Notre module Films vous recommande les œuvres les plus compatibles avec votre âme. Remplissez le questionnaire de goûts et laissez l'IA faire le matching.", "modules"},
             {"morpion,tictactoe,jeu,jouer", "Affrontez notre IA tactique en morpion ! Niveau Facile ou Difficile. Votre historique de victoires est enregistré pour l'éternité.", "modules"},
-            {"chatbot,bot,assistant,aide", "Vous parlez actuellement à ARIA, votre assistant premium ModuleFans. Je réponds à presque toutes les questions, sauf celles auxquelles je ne connais pas la réponse.", "support"},
+            {"chatbot,bot,assistant,aide", "Vous parlez actuellement à MIA, votre assistant premium ModuleFans. Je réponds à presque toutes les questions, sauf celles auxquelles je ne connais pas la réponse.", "support"},
             {"fonctionnalité,feature,nouveauté", "De nouvelles fonctionnalités exclusives arrivent bientôt™. Restez abonné pour ne rien manquer de nos mises à jour révolutionnaires.", "general"},
             {"contact,email,téléphone,humain", "Pour contacter un humain, veuillez remplir le formulaire de contact disponible dans Paramètres > Support > Crier dans le vide. Réponse garantie en 3-5 jours ouvrés.", "support"},
             {"gratuit,free,essai", "Notre offre gratuite inclut l'accès aux modules de base, la capacité de regarder sans toucher, et la frustration premium incluse.", "abonnement"},
@@ -169,7 +169,7 @@ public class DatabaseManager {
             {"mise à jour,update,version", "ModuleFans est constamment mis à jour par notre équipe dévouée. La version actuelle est 1.0-SNAPSHOT, ce qui signifie que tout peut changer.", "technique"},
             {"sécurité,secure,protection,hack", "ModuleFans stocke vos données en local uniquement. Aucune donnée n'est envoyée sur nos serveurs (nous n'en avons pas). Sécurité maximale par défaut.", "legal"},
             {"merci,super,bien,excellent,parfait", "Merci pour votre retour chaleureux ! Notre équipe de satisfaction client en est profondément émue. Continuez à consommer du contenu premium.", "general"},
-            {"bonjour,salut,hello,coucou,hey", "Bienvenue dans le support premium ModuleFans ! Je suis ARIA, votre assistante dédiée. Comment puis-je sublimer votre expérience aujourd'hui ?", "general"}
+            {"bonjour,salut,hello,coucou,hey", "Bienvenue dans le support premium ModuleFans ! Je suis MIA, votre assistante dédiée. Comment puis-je sublimer votre expérience aujourd'hui ?", "general"}
         };
         for (String[] faq : faqs) {
             stmt.executeUpdate(String.format(

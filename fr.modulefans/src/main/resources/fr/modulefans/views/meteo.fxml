@@ -42,7 +42,7 @@
             <!-- STATS PANEL -->
             <VBox spacing="12" style="-fx-min-width: 240px; -fx-max-width: 280px;">
 
-                <Label text="📊 STATISTIQUES PREMIUM" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                <Label text="📊 STATISTIQUES PREMIUM" style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 13px;"/>
 
                 <VBox styleClass="stats-card" spacing="4">
                     <Label text="TEMPÉRATURE MOYENNE" styleClass="stat-label"/>
@@ -50,7 +50,7 @@
                 </VBox>
                 <VBox styleClass="stats-card" spacing="4">
                     <Label text="MINIMUM" styleClass="stat-label"/>
-                    <Label fx:id="lblMin" text="—" styleClass="stat-value" style="-fx-text-fill: #4fc3f7;"/>
+                    <Label fx:id="lblMin" text="—" styleClass="stat-value" style="-fx-text-fill: #0090C8;"/>
                 </VBox>
                 <VBox styleClass="stats-card" spacing="4">
                     <Label text="MAXIMUM 🔥" styleClass="stat-label"/>
@@ -64,9 +64,9 @@
                     <Label text="🚨 ANOMALIES DÉTECTÉES" styleClass="stat-label" style="-fx-text-fill: #ff4444;"/>
                     <Label fx:id="lblAnomalies" text="—" styleClass="stat-value" style="-fx-text-fill: #ff4444;"/>
                 </VBox>
-                <VBox styleClass="stats-card" spacing="4" style="-fx-border-color: #ffd700;">
-                    <Label text="☀️ JOURNÉE LA PLUS TORRIDE" styleClass="stat-label" style="-fx-text-fill: #ffd700;"/>
-                    <Label fx:id="lblHottestDay" text="—" style="-fx-text-fill: #ffd700; -fx-font-size: 12px; -fx-wrap-text: true;"/>
+                <VBox styleClass="stats-card" spacing="4" style="-fx-border-color: #00AFF0;">
+                    <Label text="☀️ JOURNÉE LA PLUS TORRIDE" styleClass="stat-label" style="-fx-text-fill: #00AFF0;"/>
+                    <Label fx:id="lblHottestDay" text="—" style="-fx-text-fill: #00AFF0; -fx-font-size: 12px; -fx-wrap-text: true;"/>
                 </VBox>
 
             </VBox>

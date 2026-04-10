@@ -29,22 +29,22 @@
                     <padding><Insets top="5" right="10"/></padding>
 
                     <Label text="🎭 TES GENRES PRÉFÉRÉS"
-                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                           style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 13px;"/>
                     <VBox styleClass="stats-card" spacing="6">
-                        <CheckBox fx:id="cbAction" text="💥 Action" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbAdventure" text="🗺️ Adventure" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbComedy" text="😂 Comedy" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbDrama" text="🎭 Drama" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbSciFi" text="🚀 Sci-Fi" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbThriller" text="😰 Thriller" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbRomance" text="❤️ Romance" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbAnimation" text="✨ Animation" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbHorror" text="👻 Horror" style="-fx-text-fill: #e0e0e0;"/>
-                        <CheckBox fx:id="cbBiography" text="📚 Biography" style="-fx-text-fill: #e0e0e0;"/>
+                        <CheckBox fx:id="cbAction" text="💥 Action" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbAdventure" text="🗺️ Adventure" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbComedy" text="😂 Comedy" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbDrama" text="🎭 Drama" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbSciFi" text="🚀 Sci-Fi" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbThriller" text="😰 Thriller" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbRomance" text="❤️ Romance" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbAnimation" text="✨ Animation" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbHorror" text="👻 Horror" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbBiography" text="📚 Biography" style="-fx-text-fill: #1A1A2E;"/>
                     </VBox>
 
                     <Label text="📅 PÉRIODE"
-                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                           style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 13px;"/>
                     <VBox styleClass="stats-card" spacing="8">
                         <HBox alignment="CENTER_LEFT" spacing="10">
                             <Label text="De :" style="-fx-text-fill: #a0a0a0; -fx-min-width: 30px;"/>
@@ -57,7 +57,7 @@
                     </VBox>
 
                     <Label text="⭐ NOTE MINIMALE"
-                           style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-font-size: 13px;"/>
+                           style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 13px;"/>
                     <VBox styleClass="stats-card" spacing="8">
                         <Slider fx:id="sliderRating" min="1" max="10" value="7"/>
                         <Label fx:id="lblRatingValue" text="7.0 / 10"
@@ -74,14 +74,14 @@
             <!-- RIGHT: Results -->
             <VBox HBox.hgrow="ALWAYS" spacing="15">
                 <Label text="🏆 TOP RECOMMANDATIONS EXCLUSIVES"
-                       style="-fx-text-fill: #ffd700; -fx-font-weight: bold; -fx-font-size: 15px;"/>
+                       style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 15px;"/>
 
                 <Label fx:id="lblNoResult" text="Aucune recommandation pour ce profil. Élargissez vos critères !"
-                       style="-fx-text-fill: #a0a0a0; -fx-font-size: 13px;" visible="false"/>
+                       style="-fx-text-fill: #7A8B9A; -fx-font-size: 13px;" visible="false"/>
 
                 <VBox fx:id="resultsContainer" spacing="12">
                     <Label text="← Remplissez le questionnaire et cliquez sur 'Trouver mes films'"
-                           style="-fx-text-fill: #505060; -fx-font-size: 13px; -fx-padding: 30 0;"/>
+                           style="-fx-text-fill: #AABBCC; -fx-font-size: 13px; -fx-padding: 30 0;"/>
                 </VBox>
             </VBox>
 

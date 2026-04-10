@@ -12,14 +12,14 @@
             <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
             <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
             <VBox>
-                <Label text="💬 Support Premium — ARIA™" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="💬 Support Premium — MIA™" styleClass="app-title" style="-fx-font-size: 22px;"/>
                 <Label text="Notre service client vous écoute presque · Disponible entre 2 abonnements"
                        styleClass="app-subtitle"/>
             </VBox>
             <HBox HBox.hgrow="ALWAYS"/>
             <VBox alignment="CENTER_RIGHT">
                 <Label text="🟢 En ligne" style="-fx-text-fill: #4caf50; -fx-font-size: 11px; -fx-font-weight: bold;"/>
-                <Label text="ARIA · Assistant VIP" style="-fx-text-fill: #a0a0a0; -fx-font-size: 10px;"/>
+                <Label text="MIA · Assistant VIP" style="-fx-text-fill: #a0a0a0; -fx-font-size: 10px;"/>
             </VBox>
         </HBox>
     </top>
@@ -27,7 +27,7 @@
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" vbarPolicy="AS_NEEDED" hbarPolicy="NEVER">
             <VBox fx:id="messagesContainer" spacing="8" fillWidth="true"
-                  style="-fx-background-color: #0d0118; -fx-padding: 15;">
+                  style="-fx-background-color: #F7FAFD; -fx-padding: 15;">
                 <padding><Insets top="10" bottom="10" left="10" right="10"/></padding>
             </VBox>
         </ScrollPane>
@@ -44,7 +44,7 @@
                         style="-fx-min-height: 40px; -fx-min-width: 120px;"/>
             </HBox>
             <Label text="💡 Essayez : abonnement · remboursement · météo · bug · films · morpion"
-                   style="-fx-text-fill: #505060; -fx-font-size: 10px; -fx-padding: 6 0 0 0;"/>
+                   style="-fx-text-fill: #AABBCC; -fx-font-size: 10px; -fx-padding: 6 0 0 0;"/>
         </VBox>
     </bottom>
 

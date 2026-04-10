@@ -2,6 +2,7 @@ package fr.modulefans.services;
 
 import fr.modulefans.dao.ChatbotDAO;
 import fr.modulefans.models.FaqEntry;
+import fr.modulefans.utils.OpenAIClient;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,31 +10,40 @@ import java.util.List;
 public class ChatbotService {
 
     private final ChatbotDAO dao = new ChatbotDAO();
+    private final OpenAIClient openAI = new OpenAIClient();
 
-    private static final String[] GREETINGS = {
-        "Bonjour ! Je suis ARIA, votre assistante premium ModuleFans. 💫 Posez-moi une question !",
-        "Salut ! ARIA à votre service — le support le plus disponible entre deux abonnements. 🌟",
-        "Hey ! Bienvenue dans la zone VIP du support client. Comment puis-je vous aider ? 👑"
-    };
-
-    private static final String[] UNKNOWN_RESPONSES = {
-        "Hmm... Cette question dépasse mon niveau d'abonnement actuel. 🤔 Votre question a été transmise à notre équipe premium pour enrichissement futur.",
+    private static final String[] FALLBACK_UNKNOWN = {
+        "Hmm... Cette question dépasse mon niveau d'abonnement actuel. 🤔 Votre question a été transmise à notre équipe premium.",
         "Je ne connais pas encore la réponse à ça. 😅 Mais j'ai mémorisé votre question pour une réponse exclusive bientôt.",
-        "Excellente question ! Malheureusement, la réponse est protégée par notre offre Ultra-Premium. Votre curiosité a été enregistrée. 📋"
+        "Excellente question ! Malheureusement, la réponse est protégée par notre offre Ultra-Premium. 📋"
     };
 
-    private int unknownResponseIndex = 0;
+    private int fallbackIndex = 0;
 
+    /**
+     * Tente OpenAI en priorité. Si non configuré ou en erreur, utilise le matching FAQ local.
+     */
     public String processMessage(String userMessage) {
         if (userMessage == null || userMessage.isBlank()) {
             return "Je vous entends... mais je n'entends rien. Essayez de taper quelque chose. 🎤";
         }
 
+        if (openAI.isConfigured()) {
+            try {
+                return openAI.chat(userMessage);
+            } catch (Exception e) {
+                System.err.println("[MIA] OpenAI unavailable, falling back to FAQ: " + e.getMessage());
+            }
+        }
+
+        return processWithFaq(userMessage);
+    }
+
+    private String processWithFaq(String userMessage) {
         String lowerMsg = userMessage.toLowerCase().trim();
 
-        // Check greeting
         if (isGreeting(lowerMsg)) {
-            return GREETINGS[(int)(Math.random() * GREETINGS.length)];
+            return "Coucou chéri(e) ! Je suis MIA, ton assistante ModuleFans 💫 Comment puis-je t'aider ?";
         }
 
         List<FaqEntry> faqList = dao.getAllFaq();
@@ -52,11 +62,8 @@ public class ChatbotService {
             return bestMatch.getResponse();
         }
 
-        // No match — save to unknown
         dao.saveUnknownQuestion(userMessage);
-        String response = UNKNOWN_RESPONSES[unknownResponseIndex % UNKNOWN_RESPONSES.length];
-        unknownResponseIndex++;
-        return response;
+        return FALLBACK_UNKNOWN[fallbackIndex++ % FALLBACK_UNKNOWN.length];
     }
 
     private int computeScore(String message, String[] keywords) {
@@ -65,7 +72,6 @@ public class ChatbotService {
             String keyword = kw.trim();
             if (!keyword.isEmpty() && message.contains(keyword)) {
                 score++;
-                // Bonus for exact word match
                 if (message.matches(".*\\b" + java.util.regex.Pattern.quote(keyword) + "\\b.*")) {
                     score++;
                 }
@@ -76,6 +82,6 @@ public class ChatbotService {
 
     private boolean isGreeting(String msg) {
         return Arrays.asList("bonjour", "salut", "hello", "coucou", "hey", "hi", "bonsoir")
-            .stream().anyMatch(msg::contains);
+                .stream().anyMatch(msg::contains);
     }
 }

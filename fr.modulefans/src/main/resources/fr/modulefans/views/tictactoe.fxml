@@ -25,7 +25,7 @@
             <!-- LEFT: Settings + Stats -->
             <VBox spacing="15" style="-fx-min-width: 220px; -fx-max-width: 240px;">
 
-                <Label text="⚙️ PARAMÈTRES" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold;"/>
+                <Label text="⚙️ PARAMÈTRES" style="-fx-text-fill: #00AFF0; -fx-font-weight: bold;"/>
                 <VBox styleClass="stats-card" spacing="10">
                     <Label text="Niveau d'IA" style="-fx-text-fill: #a0a0a0; -fx-font-size: 11px;"/>
                     <HBox spacing="8">
@@ -36,7 +36,7 @@
                     </HBox>
                 </VBox>
 
-                <Label text="📊 STATISTIQUES" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
+                <Label text="📊 STATISTIQUES" style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-padding: 10 0 0 0;"/>
                 <VBox styleClass="stats-card" spacing="8">
                     <HBox alignment="CENTER_LEFT" spacing="10">
                         <Label text="🏆 Victoires" style="-fx-text-fill: #4caf50; -fx-min-width: 100px;"/>
@@ -60,7 +60,7 @@
             <!-- CENTER: Game Grid -->
             <VBox alignment="CENTER" spacing="15">
                 <Label fx:id="lblStatus" text="À vous de jouer ! Montrez ce que vous valez. 🎯"
-                       style="-fx-text-fill: #e0e0e0; -fx-font-size: 14px; -fx-wrap-text: true;"
+                       style="-fx-text-fill: #1A1A2E; -fx-font-size: 14px; -fx-wrap-text: true;"
                        textAlignment="CENTER" maxWidth="340"/>
 
                 <GridPane hgap="6" vgap="6" alignment="CENTER">
@@ -76,8 +76,8 @@
                 </GridPane>
 
                 <HBox alignment="CENTER" spacing="20">
-                    <Label text="✕ = Vous" style="-fx-text-fill: #ff6b35; -fx-font-weight: bold;"/>
-                    <Label text="○ = IA" style="-fx-text-fill: #9b59b6; -fx-font-weight: bold;"/>
+                    <Label text="✕ = Vous" style="-fx-text-fill: #00AFF0; -fx-font-weight: bold;"/>
+                    <Label text="○ = IA" style="-fx-text-fill: #0066CC; -fx-font-weight: bold;"/>
                 </HBox>
             </VBox>
 
