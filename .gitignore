@@ -1,3 +1,4 @@
 /ratings.csv
 /movies.csv
 .env
+target/
