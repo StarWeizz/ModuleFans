@@ -17,7 +17,7 @@ public class OpenAIClient {
     // Remplace la valeur ici ou configure la variable d'environnement OPENAI_API_KEY
     private static final String API_KEY = System.getenv("OPENAI_API_KEY") != null
             ? System.getenv("OPENAI_API_KEY")
-            : "REMOVED";
+            : "";
 
     private static final String SYSTEM_PROMPT = """
             Tu es MIA, l'assistante virtuelle ultra-premium de ModuleFans — une plateforme parodique de contenu exclusif.
