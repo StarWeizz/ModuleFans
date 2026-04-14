@@ -40,7 +40,7 @@
                         <CheckBox fx:id="cbRomance" text="❤️ Romance" style="-fx-text-fill: #1A1A2E;"/>
                         <CheckBox fx:id="cbAnimation" text="✨ Animation" style="-fx-text-fill: #1A1A2E;"/>
                         <CheckBox fx:id="cbHorror" text="👻 Horror" style="-fx-text-fill: #1A1A2E;"/>
-                        <CheckBox fx:id="cbBiography" text="📚 Biography" style="-fx-text-fill: #1A1A2E;"/>
+                        <CheckBox fx:id="cbDocumentary" text="🎥 Documentary" style="-fx-text-fill: #1A1A2E;"/>
                     </VBox>
 
                     <Label text="📅 PÉRIODE"
@@ -59,8 +59,8 @@
                     <Label text="⭐ NOTE MINIMALE"
                            style="-fx-text-fill: #00AFF0; -fx-font-weight: bold; -fx-font-size: 13px;"/>
                     <VBox styleClass="stats-card" spacing="8">
-                        <Slider fx:id="sliderRating" min="1" max="10" value="7"/>
-                        <Label fx:id="lblRatingValue" text="7.0 / 10"
+                        <Slider fx:id="sliderRating" min="0.5" max="5" value="3.5"/>
+                        <Label fx:id="lblRatingValue" text="3.5 / 5"
                                style="-fx-text-fill: #ffd700; -fx-font-weight: bold; -fx-font-size: 16px;"
                                alignment="CENTER"/>
                     </VBox>

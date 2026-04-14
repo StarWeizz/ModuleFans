@@ -1,7 +1,10 @@
 package fr.modulefans.dao;
 
+import fr.modulefans.utils.MovieCsvSeeder;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -76,14 +79,25 @@ public class DatabaseManager {
 
     private void seedData(Connection conn) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
-            var rsMovies = conn.createStatement().executeQuery("SELECT COUNT(*) FROM movies");
-            if (rsMovies.getInt(1) == 0) {
-                seedMovies(stmt);
+            ResultSet rsMovies = conn.createStatement().executeQuery("SELECT COUNT(*) FROM movies");
+            int movieCount = rsMovies.getInt(1);
+            // Seed from CSV if table is empty OR still has only the old 50 hardcoded movies
+            if (movieCount == 0 || movieCount == 50) {
+                if (movieCount == 50) {
+                    stmt.executeUpdate("DELETE FROM movies");
+                }
+                int inserted = MovieCsvSeeder.seedFromCsv(conn);
+                if (inserted == 0) {
+                    // CSV files not found — fall back to hardcoded sample
+                    seedMovies(stmt);
+                }
             }
-            var rsFaq = conn.createStatement().executeQuery("SELECT COUNT(*) FROM faq");
+            ResultSet rsFaq = conn.createStatement().executeQuery("SELECT COUNT(*) FROM faq");
             if (rsFaq.getInt(1) == 0) {
                 seedFaq(stmt);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

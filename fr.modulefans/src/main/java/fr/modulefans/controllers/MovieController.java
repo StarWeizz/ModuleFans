@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 public class MovieController implements Initializable {
 
     @FXML private CheckBox cbAction, cbComedy, cbDrama, cbSciFi, cbThriller;
-    @FXML private CheckBox cbRomance, cbAnimation, cbHorror, cbBiography, cbAdventure;
+    @FXML private CheckBox cbRomance, cbAnimation, cbHorror, cbDocumentary, cbAdventure;
     @FXML private ComboBox<String> cmbMinYear, cmbMaxYear;
     @FXML private Slider sliderRating;
     @FXML private Label lblRatingValue;
@@ -31,23 +31,21 @@ public class MovieController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Populate year combos
-        for (int y = 1970; y <= 2024; y += 5) {
+        for (int y = 1900; y <= 2020; y += 5) {
             cmbMinYear.getItems().add(String.valueOf(y));
             cmbMaxYear.getItems().add(String.valueOf(y));
         }
-        cmbMinYear.getItems().add("2024");
-        cmbMaxYear.getItems().add("2024");
-        cmbMinYear.setValue("2000");
-        cmbMaxYear.setValue("2024");
+        cmbMinYear.setValue("1990");
+        cmbMaxYear.setValue("2020");
 
-        sliderRating.setMin(1.0);
-        sliderRating.setMax(10.0);
-        sliderRating.setValue(7.0);
+        sliderRating.setMin(0.5);
+        sliderRating.setMax(5.0);
+        sliderRating.setValue(3.5);
         sliderRating.setBlockIncrement(0.5);
-        lblRatingValue.setText("7.0 / 10");
+        lblRatingValue.setText("3.5 / 5");
 
         sliderRating.valueProperty().addListener((obs, o, n) ->
-            lblRatingValue.setText(String.format("%.1f / 10", n.doubleValue()))
+            lblRatingValue.setText(String.format("%.1f / 5", n.doubleValue()))
         );
 
         if (lblNoResult != null) lblNoResult.setVisible(false);
@@ -64,7 +62,7 @@ public class MovieController implements Initializable {
         if (cbRomance.isSelected()) genres.add("Romance");
         if (cbAnimation.isSelected()) genres.add("Animation");
         if (cbHorror.isSelected()) genres.add("Horror");
-        if (cbBiography.isSelected()) genres.add("Biography");
+        if (cbDocumentary.isSelected()) genres.add("Documentary");
         if (cbAdventure.isSelected()) genres.add("Adventure");
 
         int minYear = Integer.parseInt(cmbMinYear.getValue());
@@ -110,8 +108,9 @@ public class MovieController implements Initializable {
         Label genreLabel = new Label("🎬 " + movie.getGenres().replace("|", " · "));
         genreLabel.getStyleClass().add("movie-genre");
 
-        Label infoLabel = new Label(String.format("📅 %d  ·  ⭐ %.1f/10  ·  ⏱ %d min",
-            movie.getYear(), movie.getRating(), movie.getDuration()));
+        String yearStr = movie.getYear() > 0 ? String.valueOf(movie.getYear()) : "?";
+        String ratingStr = movie.getRating() > 0 ? String.format("%.2f/5", movie.getRating()) : "non noté";
+        Label infoLabel = new Label("📅 " + yearStr + "  ·  ⭐ " + ratingStr);
         infoLabel.setStyle("-fx-text-fill: #a0a0a0; -fx-font-size: 11px;");
 
         card.getChildren().addAll(headerRow, matchLabel, genreLabel, infoLabel);
