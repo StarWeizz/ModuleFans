@@ -12,7 +12,7 @@
             <padding><Insets top="15" bottom="15" left="20" right="20"/></padding>
             <Button text="← Retour" styleClass="btn-back" onAction="#goBack"/>
             <VBox>
-                <Label text="🌡️ Météo Torride" styleClass="app-title" style="-fx-font-size: 22px;"/>
+                <Label text="🌡️ Météo " styleClass="app-title" style="-fx-font-size: 22px;"/>
                 <Label text="Découvre les journées les plus HOT de France" styleClass="app-subtitle"/>
             </VBox>
             <HBox HBox.hgrow="ALWAYS"/>

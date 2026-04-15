@@ -44,7 +44,7 @@
                       GridPane.columnIndex="0" GridPane.rowIndex="0">
                     <Label text="🌡️" style="-fx-font-size: 40px;"/>
                     <HBox alignment="CENTER" spacing="8">
-                        <Label text="MÉTÉO TORRIDE" styleClass="card-title"/>
+                        <Label text="MÉTÉO" styleClass="card-title"/>
                         <Label text="HOT" styleClass="badge-hot"/>
                     </HBox>
                     <Label text="Découvre les températures les plus brûlantes de ton territoire"
@@ -103,7 +103,7 @@
     <bottom>
         <HBox alignment="CENTER" styleClass="header-bar" style="-fx-border-width: 2 0 0 0;">
             <padding><Insets top="12" bottom="12"/></padding>
-            <Label text="© 2024 ModuleFans Inc. · Données locales · 100% Parodique · 0% Pornographique · Architecture MVC"
+            <Label text="© 2024 ModuleFans Inc. · Données locales · Russo Antonin · Spada Loris"
                    style="-fx-text-fill: #AABBCC; -fx-font-size: 10px;"/>
         </HBox>
     </bottom>
