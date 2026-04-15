@@ -1,6 +1,7 @@
 package fr.modulefans;
 
 import fr.modulefans.dao.DatabaseManager;
+import fr.modulefans.utils.EnvLoader;
 import fr.modulefans.utils.NavigationManager;
 import javafx.application.Application;
 import javafx.scene.text.Font;
@@ -10,6 +11,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        EnvLoader.load();
         Font.loadFont(App.class.getResourceAsStream("/fr/modulefans/assets/fonts/unifont_upper.otf"), 13);
         DatabaseManager.getInstance().initialize();
         NavigationManager.setStage(stage);

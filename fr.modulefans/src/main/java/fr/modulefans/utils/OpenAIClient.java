@@ -14,9 +14,8 @@ public class OpenAIClient {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String MODEL   = "gpt-4o-mini";
 
-    // Remplace la valeur ici ou configure la variable d'environnement OPENAI_API_KEY
-    private static final String API_KEY = System.getenv("OPENAI_API_KEY") != null
-            ? System.getenv("OPENAI_API_KEY")
+    private static final String API_KEY = EnvLoader.get("OPENAI_API_KEY") != null
+            ? EnvLoader.get("OPENAI_API_KEY")
             : "";
 
     private static final String SYSTEM_PROMPT = """
